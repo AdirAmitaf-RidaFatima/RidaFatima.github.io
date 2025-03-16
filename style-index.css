@@ -1,0 +1,150 @@
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+body {
+    background: #000;
+    color: #0FF0FC;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    scroll-behavior: smooth;
+    background: radial-gradient(circle at center, #001a1a, #000);
+}
+
+/* Hero Section with Glow Effect */
+.hero {
+    padding: 50px 20px;
+    background: radial-gradient(circle, rgba(15, 240, 252, 0.2), rgba(0, 0, 0, 1));
+    box-shadow: 0 0 40px rgba(15, 240, 252, 0.3);
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.hero:hover {
+    box-shadow: 0 0 60px rgba(15, 240, 252, 0.5);
+}
+
+/* Animated Navigation */
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15, 240, 252, 0.2);
+    transition: all 0.3s ease;
+}
+
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #0FF0FC;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Enhanced Cards */
+.glass-card, .solution-card, .fact-card, .community-card, .case-study-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(15, 240, 252, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover, .solution-card:hover, .fact-card:hover, .community-card:hover, .case-study-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 30px rgba(15, 240, 252, 0.4);
+    border-color: rgba(15, 240, 252, 0.3);
+}
+
+/* Animated Buttons */
+.cta-buttons a {
+    margin: 10px;
+    background: linear-gradient(45deg, #0FF0FC, #00BFFF);
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-buttons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-buttons a:hover::before {
+    left: 100%;
+}
+
+/* Responsive Grid Improvements */
+@media (max-width: 768px) {
+    .solutions-grid, .fast-facts, .community-grid, .case-studies-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .hero {
+        padding: 30px 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Footer Enhancement */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.footer-links a {
+    color: #0FF0FC;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: #FFCC00;
+    text-shadow: 0 0 10px rgba(15, 240, 252, 0.5);
+}
+
+/* Smooth Loading Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
